@@ -1,1 +1,179 @@
-<xml xmlns="https://developers.google.com/blockly/xml"><variables><variable id="+GDMY.]g?$O_lB/aPHTg">napaka</variable><variable id="2wkM2f#n3550aWj8Q{4y">hitrost_obracanja</variable><variable id="BBT=mf!KG9`VX:RfS#:1">obcutljivost</variable></variables><block type="pxt-on-start" x="0" y="0"><statement name="HANDLER"><block type="variables_set"><field name="VAR" id="BBT=mf!KG9`VX:RfS#:1">obcutljivost</field><value name="VALUE"><shadow type="math_number"><field name="NUM">1</field></shadow></value></block></statement></block><block type="forever" x="267" y="107"><statement name="HANDLER"><block type="motorSetInverted"><field name="motor">motors.largeBC</field><value name="reversed"><shadow type="toggleOnOff"><field name="on">true</field></shadow></value><next><block type="variables_set"><field name="VAR" id="+GDMY.]g?$O_lB/aPHTg">napaka</field><value name="VALUE"><shadow type="math_number"><field name="NUM">0</field></shadow><block type="math_arithmetic"><field name="OP">MINUS</field><value name="A"><shadow type="math_number"><field name="NUM">50</field></shadow></value><value name="B"><shadow type="math_number"><field name="NUM">0</field></shadow><block type="colorLight"><field name="this">sensors.color2</field><field name="mode">LightIntensityMode.Reflected</field></block></value></block></value><next><block type="variables_set"><field name="VAR" id="2wkM2f#n3550aWj8Q{4y">hitrost_obracanja</field><value name="VALUE"><shadow type="math_number"><field name="NUM">0</field></shadow><block type="math_arithmetic"><field name="OP">MULTIPLY</field><value name="A"><shadow type="math_number"><field name="NUM">0</field></shadow><block type="variables_get"><field name="VAR" id="BBT=mf!KG9`VX:RfS#:1">obcutljivost</field></block></value><value name="B"><shadow type="math_number"><field name="NUM">0</field></shadow><block type="variables_get"><field name="VAR" id="+GDMY.]g?$O_lB/aPHTg">napaka</field></block></value></block></value><next><block type="motorPairSteer"><mutation xmlns="http://www.w3.org/1999/xhtml" _expanded="0" _input_init="false"></mutation><field name="chassis">motors.largeBC</field><value name="turnRatio"><shadow type="motorTurnRatioPicker"/><block type="variables_get"><field name="VAR" id="2wkM2f#n3550aWj8Q{4y">hitrost_obracanja</field></block></value><value name="speed"><shadow type="motorSpeedPicker"><field name="speed">20</field></shadow></value><next><block type="screenShowNumber"><value name="name"><block type="colorLight"><field name="this">sensors.color1</field><field name="mode">LightIntensityMode.Reflected</field></block></value><value name="line"><shadow type="math_number"><field name="NUM">1</field></shadow></value><next><block type="screenShowNumber"><value name="name"><block type="colorLight"><field name="this">sensors.color2</field><field name="mode">LightIntensityMode.Reflected</field></block></value><value name="line"><shadow type="math_number"><field name="NUM">2</field></shadow></value><next><block type="screenShowNumber"><value name="name"><block type="variables_get"><field name="VAR" id="2wkM2f#n3550aWj8Q{4y">hitrost_obracanja</field></block></value><value name="line"><shadow type="math_number"><field name="NUM">3</field></shadow></value></block></next></block></next></block></next></block></next></block></next></block></next></block></statement></block></xml>
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <variables>
+    <variable type="" id="#mC4m/dtU/rZDUi7xdew">napaka</variable>
+    <variable type="" id="$9XG*2Ae$!ZowMif:-2`">hitrost_obracanja</variable>
+    <variable type="" id="j,+m]d$lp(HICN([=J#e">obcutljivost</variable>
+  </variables>
+  <block type="function_definition" x="0" y="0">
+    <field name="function_name">sledenje</field>
+    <field name="PARAMS"></field>
+    <statement name="STACK">
+      <block type="motorSetInverted">
+        <field name="motor">motors.largeBC</field>
+        <value name="reversed">
+          <shadow type="toggleOnOff">
+            <field name="on">true</field>
+          </shadow>
+        </value>
+        <next>
+          <block type="variables_set">
+            <field name="VAR" id="#mC4m/dtU/rZDUi7xdew" variabletype="">napaka</field>
+            <value name="VALUE">
+              <shadow type="math_number">
+                <field name="NUM">0</field>
+              </shadow>
+              <block type="math_arithmetic">
+                <field name="OP">MINUS</field>
+                <value name="A">
+                  <shadow type="math_number">
+                    <field name="NUM">50</field>
+                  </shadow>
+                </value>
+                <value name="B">
+                  <shadow type="math_number">
+                    <field name="NUM">0</field>
+                  </shadow>
+                  <block type="colorLight">
+                    <field name="this">sensors.color2</field>
+                    <field name="mode">LightIntensityMode.Reflected</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <next>
+              <block type="variables_set">
+                <field name="VAR" id="$9XG*2Ae$!ZowMif:-2`" variabletype="">hitrost_obracanja</field>
+                <value name="VALUE">
+                  <shadow type="math_number">
+                    <field name="NUM">0</field>
+                  </shadow>
+                  <block type="math_arithmetic">
+                    <field name="OP">MULTIPLY</field>
+                    <value name="A">
+                      <shadow type="math_number">
+                        <field name="NUM">0</field>
+                      </shadow>
+                      <block type="variables_get">
+                        <field name="VAR" id="j,+m]d$lp(HICN([=J#e" variabletype="">obcutljivost</field>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <shadow type="math_number">
+                        <field name="NUM">0</field>
+                      </shadow>
+                      <block type="variables_get">
+                        <field name="VAR" id="#mC4m/dtU/rZDUi7xdew" variabletype="">napaka</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <next>
+                  <block type="motorPairSteer">
+                    <mutation _expanded="0" _input_init="false"></mutation>
+                    <field name="chassis">motors.largeBC</field>
+                    <value name="turnRatio">
+                      <shadow type="motorTurnRatioPicker"></shadow>
+                      <block type="variables_get">
+                        <field name="VAR" id="$9XG*2Ae$!ZowMif:-2`" variabletype="">hitrost_obracanja</field>
+                      </block>
+                    </value>
+                    <value name="speed">
+                      <shadow type="motorSpeedPicker">
+                        <field name="speed">15</field>
+                      </shadow>
+                    </value>
+                    <next>
+                      <block type="screenShowNumber">
+                        <value name="name">
+                          <block type="colorLight">
+                            <field name="this">sensors.color1</field>
+                            <field name="mode">LightIntensityMode.Reflected</field>
+                          </block>
+                        </value>
+                        <value name="line">
+                          <shadow type="math_number">
+                            <field name="NUM">1</field>
+                          </shadow>
+                        </value>
+                        <next>
+                          <block type="screenShowNumber">
+                            <value name="name">
+                              <block type="colorLight">
+                                <field name="this">sensors.color2</field>
+                                <field name="mode">LightIntensityMode.Reflected</field>
+                              </block>
+                            </value>
+                            <value name="line">
+                              <shadow type="math_number">
+                                <field name="NUM">2</field>
+                              </shadow>
+                            </value>
+                            <next>
+                              <block type="screenShowNumber">
+                                <value name="name">
+                                  <block type="variables_get">
+                                    <field name="VAR" id="$9XG*2Ae$!ZowMif:-2`" variabletype="">hitrost_obracanja</field>
+                                  </block>
+                                </value>
+                                <value name="line">
+                                  <shadow type="math_number">
+                                    <field name="NUM">3</field>
+                                  </shadow>
+                                </value>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="pxt-on-start" x="669" y="229">
+    <statement name="HANDLER">
+      <block type="variables_set">
+        <field name="VAR" id="j,+m]d$lp(HICN([=J#e" variabletype="">obcutljivost</field>
+        <value name="VALUE">
+          <shadow type="math_number">
+            <field name="NUM">2.2</field>
+          </shadow>
+        </value>
+      </block>
+    </statement>
+  </block>
+  <block type="buttonEvent" x="85" y="479">
+    <field name="button">brick.buttonEnter</field>
+    <field name="event">ButtonEvent.Pressed</field>
+    <statement name="HANDLER">
+      <block type="controls_repeat_ext">
+        <value name="TIMES">
+          <shadow type="math_whole_number" id="V3a%y@.kZ6o/x))`S~pO">
+            <field name="NUM">4</field>
+          </shadow>
+          <block type="timerSeconds">
+            <field name="timer">control.timer4</field>
+          </block>
+        </value>
+        <statement name="DO">
+          <block type="function_call">
+            <mutation name="sledenje"></mutation>
+            <field name="function_name">sledenje</field>
+          </block>
+        </statement>
+      </block>
+    </statement>
+  </block>
+  <block type="controls_repeat_ext" disabled="true" x="44" y="691">
+    <value name="TIMES">
+      <shadow type="math_whole_number">
+        <field name="NUM">4</field>
+      </shadow>
+    </value>
+  </block>
+</xml>
